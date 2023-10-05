@@ -9,17 +9,6 @@ const url = {
     searchWord : (word) => `https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=${word}`,
 }
 
-const selector = {
-    path: 'div.search_result > dl',
-    items: [
-        { name: 'counter', path: 'span.count', text: true, href: false },
-        { name: 'href', path: 'span.title > a', text: false, href: true },
-        { name: 'title', path: 'span.title > a', text: true, href: false },
-        { name: 'nick', path: 'span.global-nick', text: true, href: false },
-        { name: 'date', path: 'span.date', text: true, href: false },
-    ],
-    type: 'post',
-};
 
 async function run() {
     const browser = await puppeteer.launch();
